@@ -1,6 +1,7 @@
 # Intro
 All the oracle client library and FDW extention is in the _sdk_ bacause is not possbile to get it through wget from Oracle site.
 If you need another version download it from [Oracle site](https://www.oracle.com/database/technologies/instant-client/downloads.html) an put it into sdk folder.
+oracle_fdw zip file download from [oracle_fdw](https://github.com/laurenz/oracle_fdw/releases)
 # Build image
 ```console
 docker build -t postgres-ora-fdw:11.4 .
