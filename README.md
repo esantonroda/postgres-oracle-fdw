@@ -4,27 +4,32 @@ If you need another version download it from [Oracle site](https://www.oracle.co
 oracle_fdw zip file download from [oracle_fdw](https://github.com/laurenz/oracle_fdw/releases)
 # Build image
 ```console
-docker build -t postgres-ora-fdw:14.6 .
+docker build -t postgres-ora-fdw:14 .
 ```
 ## Supported args
 
 | Arg                   | default       |
 | -------------         | ------------- |
-| postgres_version      | 14.6            |
+| postgres_version      | 14            |
 | oracle_fdw_version    | 2_4_0         |
 | instantclient_version | 19_3          |
 
 *Example*
 ```console
-docker build --build-arg postgres_version=14 -t postgres-ora-fdw:14.6 .
+docker build --build-arg postgres_version=14 -t postgres-ora-fdw:14 .
 ```
 # Run image
-docker run -d  --name test-postgres postgres-ora-fdw:14.6
+```console
+docker run -d  --name test-postgres-ora-fdw \
+-e POSTGRES_PASSWORD=mysecretpassword \
+-p 5432:5432 \
+postgres-ora-fdw:14
+```
 
 # Create Foreign Data Wrapper
 Enter into container
 ```console
-docker exec -it test-postgres bash
+docker exec -it test-postgres-ora-fdw bash
 ```
 
 then
