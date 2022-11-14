@@ -1,8 +1,8 @@
-ARG postgres_version=11.4
+ARG postgres_version=14
 
 FROM postgres:$postgres_version
 
-ARG oracle_fdw_version=2_1_0
+ARG oracle_fdw_version=2_4_0
 ARG instantclient_version=19_3
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
