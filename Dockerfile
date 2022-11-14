@@ -1,4 +1,4 @@
-ARG postgres_version=14
+ARG postgres_version=14.6
 
 FROM postgres:$postgres_version
 
