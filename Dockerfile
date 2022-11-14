@@ -12,8 +12,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     make \
     unzip \
-    postgresql-server-dev-all \
-    postgresql-common
+    postgresql-server-dev-14 \
+    postgresql-14 \
+    postgresql-client-14
 
 COPY sdk\ /tmp
 
