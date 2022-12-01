@@ -54,4 +54,26 @@ IMPORT FOREIGN SCHEMA "<foreignSchemaName>"
     INTO <localSchemaName>;
 ```
 
+```console
+# check version
+postgres=# select version();
+                                                           version
+
+-----------------------------------------------------------------------------------------------------------------------------
+ PostgreSQL 14.6 (Debian 14.6-1.pgdg110+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit
+# check extensions
+postgres=# SELECT * FROM pg_extension;
+  oid  |  extname   | extowner | extnamespace | extrelocatable | extversion | extconfig | extcondition
+-------+------------+----------+--------------+----------------+------------+-----------+--------------
+ 13743 | plpgsql    |       10 |           11 | f              | 1.0        |           |
+ 16384 | oracle_fdw |       10 |         2200 | t              | 1.2        |           |
+(2 rows)
+postgres=# \dx
+                        List of installed extensions
+    Name    | Version |   Schema   |              Description
+------------+---------+------------+----------------------------------------
+ oracle_fdw | 1.2     | public     | foreign data wrapper for Oracle access
+ plpgsql    | 1.0     | pg_catalog | PL/pgSQL procedural language
+(2 rows)
+```
 more info on [PostgreSQL docs](https://www.postgresql.org/docs/14/sql-importforeignschema.html).
